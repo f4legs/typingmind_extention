@@ -41,7 +41,7 @@ function changeIcons() {
 
 // Function to observe changes in the relevant part of the DOM
 function observeDOMChanges() {
-    const targetNode = document.getElementById('sidebar-beginning-part'); // Replace with the ID of the container that holds the top icons
+    const targetNode = document.getElementById('nav-container');
 
     const config = { childList: true, subtree: true }; // Observe changes to child nodes and their descendants
 
