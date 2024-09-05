@@ -1,31 +1,29 @@
-// Define the new SVG icons in an object
 const iconData = {
-    'create-new-folder': `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-        <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h207q16 0 30.5 6t25.5 17l57 57h320q33 0 56.5 23.5T880-640v400q0 33-23.5 56.5T800-160H160Zm400-240v40q0 17 11.5 28.5T600-320q17 0 28.5-11.5T640-360v-40h40q17 0 28.5-11.5T720-440q0-17-11.5-28.5T680-480h-40v-40q0-17-11.5-28.5T600-560q-17 0-28.5 11.5T560-520v40h-40q-17 0-28.5 11.5T480-440q0 17 11.5 28.5T520-400h40Z"/>
+    'create-new-folder': `<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 512 512" class="w-6 h-6" fill="currentColor">
+        <path d="M464 128H272L208 64H48A48 48 0 0 0 0 112V400a48 48 0 0 0 48 48H464a48 48 0 0 0 48-48V176A48 48 0 0 0 464 128ZM359.5 296a16 16 0 0 1-16 16h-64v64a16 16 0 0 1-16 16h-16a16 16 0 0 1-16-16V312h-64a16 16 0 0 1-16-16V280a16 16 0 0 1 16-16h64V200a16 16 0 0 1 16-16h16a16 16 0 0 1 16 16v64h64a16 16 0 0 1 16 16Z"></path>
     </svg>`,
-    'tag-search-button': `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-        <path d="m159-168-34-14q-31-13-41.5-45t3.5-63l72-156v278Zm160 88q-33 0-56.5-23.5T239-160v-240l106 294q3 7 6 13.5t8 12.5h-40Zm206-4q-32 12-62-3t-42-47L243-622q-12-32 2-62.5t46-41.5l302-110q32-12 62 3t42 47l178 488q12 32-2 62.5T827-194L525-84Zm-86-476q17 0 28.5-11.5T479-600q0-17-11.5-28.5T439-640q-17 0-28.5 11.5T399-600q0 17 11.5 28.5T439-560Z"/>
+    'tag-search-button': `<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 1024 1024" class="w-6 h-6" fill="currentColor">
+        <path d="M938 458.8l-29.6-312.6c-1.5-16.2-14.4-29-30.6-30.6L565.2 86h-.4c-3.2 0-5.7 1-7.6 2.9L88.9 557.2a9.96 9.96 0 0 0 0 14.1l363.8 363.8c1.9 1.9 4.4 2.9 7.1 2.9s5.2-1 7.1-2.9l468.3-468.3c2-2.1 3-5 2.8-8zM699 387c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"></path>
     </svg>`,
-    'select-chats-symbol': `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor">
-        <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h499q17 0 28.5 11.5T739-800q0 17-11.5 28.5T699-760H200v560h560v-260q0-17 11.5-28.5T800-500q17 0 28.5 11.5T840-460v260q0 33-23.5 56.5T760-120H200Zm261-272 340-340q11-11 27-11t28 11q12 11 12 28t-12 29L489-308q-12 12-28 12t-28-12L263-478q-11-11-11-28t11-28q11-11 28-11t28 11l142 142Z"/>
+    'select-chats-symbol': `<svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" viewBox="0 0 24 24" class="w-6 h-6" fill="currentColor">
+        <path d="M6.99979 7V3C6.99979 2.44772 7.4475 2 7.99979 2H20.9998C21.5521 2 21.9998 2.44772 21.9998 3V16C21.9998 16.5523 21.5521 17 20.9998 17H17V20.9925C17 21.5489 16.551 22 15.9925 22H3.00728C2.45086 22 2 21.5511 2 20.9925L2.00276 8.00748C2.00288 7.45107 2.4518 7 3.01025 7H6.99979ZM8.99979 7H15.9927C16.549 7 17 7.44892 17 8.00748V15H19.9998V4H8.99979V7ZM8.50242 18L14.1593 12.3431L12.7451 10.9289L8.50242 15.1716L6.3811 13.0503L4.96689 14.4645L8.50242 18Z"></path>
     </svg>`,
 };
 
-// Function to change the icons based on the data-element-id
 function changeIcons() {
     Object.keys(iconData).forEach(key => {
-        const button = document.querySelector(`button[data-element-id="${key}"]`);
+        const button = document.querySelector(`[data-element-id="${key}"]`);
         if (button) {
-            const currentSvg = button.querySelector('svg');
-            // Remove the current SVG if it exists
-            if (currentSvg) {
-                currentSvg.remove();
+            const svg = button.querySelector('svg');
+            if (svg) {
+                svg.outerHTML = iconData[key];
             }
-            // Add the new SVG icon
-            button.insertAdjacentHTML('afterbegin', iconData[key]);
         }
     });
 }
 
-// Run the function after the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', changeIcons);
+// Run the function immediately
+changeIcons();
+
+// Also run it after a short delay to catch any dynamically loaded elements
+setTimeout(changeIcons, 1000);
